@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roguelike Game</title>
+    <style>@font-face{
+      font-family: pixelfont;
+      src: url(font.ttf)
+  }
+  * {
+      font-family: pixelfont;
+  }</style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="field" id="display">
+      <div id="spider" ></div>
+      <div id="startBox">
+        <p>Hello Stranger!</p>
+        <p>Please introduce yourself...</p>
+        <p>Then you can start to explore the forest with WASD keys!</p>
+        <input
+          type="text"
+          id="playerName"
+          placeholder="Type your name please..."
+        />
+        <select id="playerRace">
+          <option>Boy scout</option>
+          <option>Forester</option>
+          <option>Hiker</option>
+        </select>
+        <button onclick="_start(moveAll)">START</button>
+      </div>
+      <div id="endBox" class="is-hidden">
+        Game over!
+        <button onclick="_restart(moveAll)">Restart</button>
+      </div>
+
+      <div id="playerStats" class="is-hidden"></div>
+      <div id="enemyStats" class="is-hidden"></div>
+      <div id="inventory"></div>
+      <pre id="screen" class="is-hidden"></pre>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
